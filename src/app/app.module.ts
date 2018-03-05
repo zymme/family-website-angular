@@ -7,14 +7,15 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 import { LoginModule } from './login/login.module';
+import { RegisterModule } from './register/register.module';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    WelcomeComponent,
-    
+    WelcomeComponent,    
   ],
   imports: [
     BrowserModule,
@@ -25,7 +26,8 @@ import { LoginModule } from './login/login.module';
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
       
     ]),
-    LoginModule
+    LoginModule,
+    RegisterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

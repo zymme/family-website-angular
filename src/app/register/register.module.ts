@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { LoginComponent } from './login.component';
+import { RegisterComponent } from './register.component';
 import { UserService } from '../user/user.service';
 
 @NgModule({
@@ -10,12 +10,10 @@ import { UserService } from '../user/user.service';
     CommonModule,
     FormsModule,
     RouterModule.forChild([
-      { path: 'login', component: LoginComponent }
+      { path: 'register', component: RegisterComponent }
     ])
   ],
-  declarations: [
-    LoginComponent
-  ], 
+  declarations: [RegisterComponent], 
   exports: [
     CommonModule,
     FormsModule
@@ -24,4 +22,4 @@ import { UserService } from '../user/user.service';
     UserService
   ]
 })
-export class LoginModule { }
+export class RegisterModule { }
