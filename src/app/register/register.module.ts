@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { RegisterComponent } from './register.component';
 import { UserService } from '../user/user.service';
+import { LoadingModule } from 'ngx-loading';
 
 @NgModule({
   imports: [
@@ -11,7 +12,8 @@ import { UserService } from '../user/user.service';
     FormsModule,
     RouterModule.forChild([
       { path: 'register', component: RegisterComponent }
-    ])
+    ]),
+    LoadingModule
   ],
   declarations: [RegisterComponent], 
   exports: [
