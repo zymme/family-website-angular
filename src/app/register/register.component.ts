@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user/user.service';
+import { IUser } from '../user/User';
 
 
 @Component({
@@ -16,7 +17,10 @@ export class RegisterComponent implements OnInit {
   private _pwd: string;
 
   public loading: boolean = false;
+  private usercreated: boolean = false;
 
+  errorMessage: string;
+  
 
   constructor(private _userService: UserService) { 
     
@@ -70,9 +74,45 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
+  clearForm() {
+    this._firstName = '';
+    this._lastName = '';
+    this._birthday = null;
+    this._username = '';
+    this._pwd = '';
+  }
+
 
   registerUser(): void {
     console.log('inside registerUser ...');
     this.loading = true;
+
+    try {
+     
+      const myuser = <IUser> {
+        first_name: this._firstName,
+        last_name: this._lastName,
+        birthdate: this._birthday,
+        username: this._username,
+        pwd: this._pwd
+      };
+
+      this._userService.registerUser(myuser)
+                        .subscribe( data => {
+                          console.log(JSON.stringify(data));
+                          this.loading = false;
+                          this.usercreated = true;
+                          this.clearForm();
+                        }, 
+                        error => {
+                          this.errorMessage = <any>error;
+                          this.loading = false;
+                        });
+    }
+    catch(err)
+    {
+      console.error(err);
+      this.loading = false;
+    }
   }
 }

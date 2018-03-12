@@ -24,7 +24,19 @@ export class UserService {
   registerUser(user: IUser) : Observable<IUser> {
 
     try {
+      console.log('Sending user: ' + JSON.stringify(user));
 
+      return this._http.post<IUser>(this._usersApi, user)
+              .do(data => {
+                console.log('RETURNED ' + JSON.stringify(data)); 
+              }
+            
+            )
+              ._catch(this.handleError);
+
+      // return this._http.get(this._usersApi)
+      //                   .do(data => console.log('RETURNED ' + JSON.stringify(data)))
+      //                   ._catch(this.handleError);
     }
     catch(e)
     {

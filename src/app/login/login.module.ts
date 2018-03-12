@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login.component';
-import { UserService } from '../user/user.service';
+import { AuthenticationService } from '../service/authentication.service';
+import { LoadingModule } from 'ngx-loading';
 
 @NgModule({
   imports: [
@@ -11,7 +12,8 @@ import { UserService } from '../user/user.service';
     FormsModule,
     RouterModule.forChild([
       { path: 'login', component: LoginComponent }
-    ])
+    ]),
+    LoadingModule
   ],
   declarations: [
     LoginComponent
@@ -21,7 +23,7 @@ import { UserService } from '../user/user.service';
     FormsModule
   ],
   providers: [
-    UserService
+    AuthenticationService
   ]
 })
 export class LoginModule { }
