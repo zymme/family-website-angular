@@ -26,18 +26,24 @@ export class AuthenticationService {
     try {
       console.log('Authenticating user ; ' + username);
 
-      let myheaders = new Headers({ 'Content-Type': 'application/json' });
       let params = new HttpParams().set('username', username).set('password', password);
-      // { 
-      //   headers: new HttpHeaders().set('Content-Type', 'application/json')
-      // }
+      
+      const httpOptions = {
+        headers: new HttpHeaders({
+          // 'Content-Type': 'application/json',
+          'X-Custom-Head1': 'ello there'
+        })
+      };
 
-      return this._http.post<IUser>(this._authEndpoint + '?username=' + username + '&password=' + password, null)
+      
+      return this._http.post<IUser>(this._authEndpoint, params, httpOptions)
                                     .do(data => {
                                       console.log('RETURNED USER : '+ JSON.stringify(data));
                                       localStorage.setItem('currentUser', JSON.stringify(data))
                                     })
                                     ._catch(this.handleError)
+
+                                    
     }
     catch(e)
     {

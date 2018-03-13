@@ -8,7 +8,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 
 import { LoginModule } from './login/login.module';
 import { RegisterModule } from './register/register.module';
-
+import { MessagesModule } from './messages/messages.module';
 
 
 
@@ -28,7 +28,8 @@ import { RegisterModule } from './register/register.module';
       
     ]),
     LoginModule,
-    RegisterModule
+    RegisterModule,
+    MessagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

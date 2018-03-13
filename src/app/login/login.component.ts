@@ -47,6 +47,7 @@ export class LoginComponent implements OnInit {
                              .subscribe( data => {
                                console.log('RETURNED TO login component: ' + JSON.stringify(data));
                                this.loading = false;
+                               this.loginerror = false;
                              }, 
                             error => {
                               console.log(error);
