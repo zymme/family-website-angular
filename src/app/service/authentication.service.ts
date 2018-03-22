@@ -7,13 +7,14 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/observable/throw';
 import { HttpErrorResponse } from "@angular/common/http/src/response";
 import { IUser } from '../user/user';
+import { NotificationService } from './notification.service';
 
 @Injectable()
 export class AuthenticationService {
 
   private _authEndpoint: string;
 
-  constructor(private _http: HttpClient) { 
+  constructor(private _http: HttpClient, private notifyService: NotificationService) { 
 
     this._authEndpoint = environment.authApiUrl;
     console.log('Auth endpoint: ' + this._authEndpoint);
@@ -54,6 +55,7 @@ export class AuthenticationService {
   }
 
   logout() {
+    console.log('calling authservice - logout() ...');
     localStorage.removeItem('currentUser');
   }
 

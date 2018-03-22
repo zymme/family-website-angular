@@ -9,8 +9,9 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { LoginModule } from './login/login.module';
 import { RegisterModule } from './register/register.module';
 import { MessagesModule } from './messages/messages.module';
+import { NotificationService } from './service/notification.service';
 
-
+import {DropdownModule} from "ngx-dropdown";
 
 
 @NgModule({
@@ -21,17 +22,19 @@ import { MessagesModule } from './messages/messages.module';
   imports: [
     BrowserModule,
     HttpClientModule,
+    DropdownModule,
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' },
       
     ]),
+    
     LoginModule,
     RegisterModule,
     MessagesModule
   ],
-  providers: [],
+  providers: [NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

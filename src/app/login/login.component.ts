@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from '../service/authentication.service';
 
 @Component({
@@ -11,14 +12,19 @@ export class LoginComponent implements OnInit {
   private _email: string = null;
   private _pwd: string = null;
   public loginerror = false;
+  public loggedIn = false;
 
 
-  constructor(private _authService: AuthenticationService) { }
+  constructor(private _authService: AuthenticationService, private _router: Router) { }
 
   public loading: boolean = false;
 
   ngOnInit() {
-
+    console.log("in the init for login ...");
+    if(localStorage.getItem('currentUser'))
+    {
+      this.loggedIn = true;
+    }
   }
 
   get email(): string {
@@ -48,6 +54,7 @@ export class LoginComponent implements OnInit {
                                console.log('RETURNED TO login component: ' + JSON.stringify(data));
                                this.loading = false;
                                this.loginerror = false;
+                               this._router.navigate(['/messages']);
                              }, 
                             error => {
                               console.log(error);
@@ -62,6 +69,12 @@ export class LoginComponent implements OnInit {
       this.loginerror = true;
     }
 
+  }
+
+  logout(): void {
+    console.log('calling login component logout() ...');
+    this._authService.logout();
+    this._router.navigate(['/welcome']);
   }
 
 }

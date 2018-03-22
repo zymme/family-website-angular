@@ -1,10 +1,13 @@
 
 <ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a href="#">Home</a></li>
+  <li role="presentation" class="active"><a [routerLink]="['/welcome']">Home</a></li>
   <li role="presentation"><a href="#">Profile</a></li>
   <li role="presentation"><a [routerLink]="['/messages']">Messages</a></li>
-  <li role="presentation"><a [routerLink]="['/login']">Login</a></li>
+  
+  
+  <li role="presentation"><a [routerLink]="['/login']">{{loginTitle}}/Log Out</a></li>
 </ul>
+
 <div class='container'>
   <router-outlet></router-outlet>
 </div>

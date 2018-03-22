@@ -1,6 +1,6 @@
 
 
-<div class='well'>
+<div class='well' *ngIf='!loggedIn'>
     <div class='form-group'>
       <label>Email Address</label>
       <input type="email" [(ngModel)]='email' class='form-control'aria-describedby="emailHelp" placeholder="Enter email">
@@ -14,6 +14,12 @@
       <a [routerLink]="['/register']">Register Here!</a>
       <ngx-loading [show]='loading' [config]="{ backgroundBorderRadius: '14px' }"></ngx-loading>
 </div>
+<div class='well' *ngIf='loggedIn'>
+  <div>
+    <button type="button" class="btn btn-success" (click)='logout()' >Log Out</button>
+  </div>
+</div>
+
 <div class='alert alert-danger' *ngIf='loginerror'>
   <strong>Problem Encountered!</strong> Login failed. Please make sure you entered your information correctly and try again.
 </div>
