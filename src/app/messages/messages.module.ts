@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MessagesGuard } from './messages-guard.guard';
 import {DropdownModule} from "ngx-dropdown";
+import { SendmessageComponent } from './sendmessage.component';
 
 @NgModule({
   imports: [
@@ -13,10 +14,11 @@ import {DropdownModule} from "ngx-dropdown";
     DropdownModule,
     RouterModule.forChild([
       { path: 'messages', component: MessagesComponent, 
-        canActivate: [MessagesGuard] }
+        canActivate: [MessagesGuard] },
+      { path: 'sendmessage', component: SendmessageComponent }
     ])
   ],
-  declarations: [MessagesComponent]
+  declarations: [MessagesComponent, SendmessageComponent]
   , 
   exports: [
     CommonModule,

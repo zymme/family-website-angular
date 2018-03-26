@@ -1,15 +1,21 @@
 
 
 
+<div class="well">
+  <p>Please choose what you would like to do below ...</p>
+  <div class="dropdown" dropdown>
+    <button class="btn btn-primary" dropdown-open>Message Options<span class="caret"></span></button>
+    <ul class="dropdown-menu">
+        <li><a [routerLink]="['/sendmessage']">Send a Message!</a></li>
+        <li><a href="#">Place Message on the Message Board!</a></li>
+        <li class="divider dropdown-divider"></li>
+        <li><a href="#">View My Messages</a></li>
+    </ul>
+  </div>
 
-<div class="dropdown" dropdown>
-  <button class="btn btn-primary" dropdown-open>Message Options<span class="caret"></span></button>
-  <ul class="dropdown-menu">
-      <li><a href="#">Send Message to someone</a></li>
-      <li><a href="#">Place message on message board</a></li>
-      <li><a href="#">Lieman</a></li>
-  </ul>
 </div>
+
+
 
 
 <!-- <div class="panel panel-primary">
