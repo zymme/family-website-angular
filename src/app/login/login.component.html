@@ -14,10 +14,23 @@
       <a [routerLink]="['/register']">Register Here!</a>
       <ngx-loading [show]='loading' [config]="{ backgroundBorderRadius: '14px' }"></ngx-loading>
 </div>
-<div class='well' *ngIf='loggedIn'>
+<!-- <div class='well' *ngIf='loggedIn'>
   <div>You may logout by clicking here ->
     <button type="button" class="btn btn-success" (click)='logout()' >Log Out</button>
   </div>
+</div> -->
+
+<div class="card" style="width: 18rem;" *ngIf='loggedIn'>
+  <div class="card-body">
+    <h5 class="card-title">You are now logged in</h5>
+    <h6 class="card-subtitle mb-2 text-muted"></h6>
+    <p class="card-text">You are logged into the family website. You may click below to logout!</p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;" *ngIf='loggedIn'>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><button type="button" class="btn btn-success" (click)='logout()' >Log Out</button></li>
+  </ul>
 </div>
 
 <div class='alert alert-danger' *ngIf='loginerror'>

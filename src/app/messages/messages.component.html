@@ -1,37 +1,44 @@
 
 
 
-<div class="well">
+<!-- <div class="well">
   <p>Please choose what you would like to do below ...</p>
-  <div class="dropdown" dropdown>
-    <button class="btn btn-primary" dropdown-open>Message Options<span class="caret"></span></button>
-    <ul class="dropdown-menu">
-        <li><a [routerLink]="['/sendmessage']">Send a Message!</a></li>
-        <li><a href="#">Place Message on the Message Board!</a></li>
-        <li class="divider dropdown-divider"></li>
-        <li><a href="#">View My Messages</a></li>
+  
+  <div class="btn-group" dropdown>
+    <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+      What would you like to do? <span class="caret"></span>
+    </button>
+    <ul *dropdownMenu class="dropdown-menu" role="menu">
+      <li role="menuitem"><a class="dropdown-item" [routerLink]="['/sendmessage']">Send a Message!</a></li>
+      <li role="menuitem"><a class="dropdown-item" href="#">Place Message on the Message Board!</a></li>
+      <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+      <li class="divider dropdown-divider"></li>
+      <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+      </li>
     </ul>
   </div>
 
-</div>
-
-
-
-
-<!-- <div class="panel panel-primary">
-  
-  <div class="panel-heading">Send Message</div>
-  <div class="panel-body">
-    <div class='well'>
-      <div class='form-group'>
-        <label for='to'>To:</label>
-        <input type='text' class='form-control' id='to' />
-      </div>
-      <div class="form-group">
-        <label for="msgTextArea">Message </label>
-        <textarea class="form-control" id="msgTextArea" rows="3"></textarea>
-      </div>
-    </div>
-  </div>
-  
 </div> -->
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">What would you like to do? </h5>
+    <h6 class="card-subtitle mb-2 text-muted"></h6>
+    <p class="card-text">Click on the dropdown below to choose what you would like to do next!</p>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <div class="btn-group" dropdown>
+    <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
+      What would you like to do? <span class="caret"></span>
+    </button>
+    <ul *dropdownMenu class="dropdown-menu" role="menu">
+      <li role="menuitem"><a class="dropdown-item" [routerLink]="['/sendmessage']">Send a Message!</a></li>
+      <li role="menuitem"><a class="dropdown-item" href="#">Place Message on the Message Board!</a></li>
+      <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+      <li class="divider dropdown-divider"></li>
+      <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -4,19 +4,23 @@ import { MessagesComponent } from './messages.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MessagesGuard } from './messages-guard.guard';
-import {DropdownModule} from "ngx-dropdown";
+// import {DropdownModule} from "ngx-dropdown";
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+
+
 import { SendmessageComponent } from './sendmessage.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    DropdownModule,
+    BsDropdownModule,
     RouterModule.forChild([
       { path: 'messages', component: MessagesComponent, 
         canActivate: [MessagesGuard] },
       { path: 'sendmessage', component: SendmessageComponent }
-    ])
+    ]),
+    
   ],
   declarations: [MessagesComponent, SendmessageComponent]
   , 

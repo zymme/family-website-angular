@@ -11,7 +11,9 @@ import { RegisterModule } from './register/register.module';
 import { MessagesModule } from './messages/messages.module';
 import { NotificationService } from './service/notification.service';
 
-import {DropdownModule} from "ngx-dropdown";
+// import {DropdownModule} from "ngx-dropdown";
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { MessageboardModule } from './messageboard/messageboard.module';
 
 
 @NgModule({
@@ -22,7 +24,7 @@ import {DropdownModule} from "ngx-dropdown";
   imports: [
     BrowserModule,
     HttpClientModule,
-    DropdownModule,
+    BsDropdownModule.forRoot(),
     RouterModule.forRoot([
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
@@ -32,7 +34,8 @@ import {DropdownModule} from "ngx-dropdown";
     
     LoginModule,
     RegisterModule,
-    MessagesModule
+    MessagesModule,
+    MessageboardModule
   ],
   providers: [NotificationService],
   bootstrap: [AppComponent]
