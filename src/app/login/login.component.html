@@ -1,26 +1,34 @@
 
-
-<div class='well' *ngIf='!loggedIn'>
-    <div class='form-group'>
-      <label>Email Address</label>
-      <input type="email" [(ngModel)]='email' class='form-control'aria-describedby="emailHelp" placeholder="Enter email">
-      <small id="emailHelp"  class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
-    <div class="form-group">
-        <label>Password</label>
-        <input type="password" [(ngModel)]='password' class="form-control" id="exampleInputPassword1" placeholder="Password">
+<div class="card" *ngIf='!loggedIn'>
+  <div class="card-header">
+    Log In
+  </div>
+  <div class="card-body" >
+    <div class='well' *ngIf='!loggedIn'>
+      <div class='form-group'>
+        <label>Email Address</label>
+        <input type="email" [(ngModel)]='email' class='form-control'aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp"  class="form-text text-muted">We'll never share your email with anyone else.</small>
       </div>
-      <button type="submit" (click)='login()' class="btn btn-primary">Submit</button> Not registered? Click here ->
-      <a [routerLink]="['/register']">Register Here!</a>
-      <ngx-loading [show]='loading' [config]="{ backgroundBorderRadius: '14px' }"></ngx-loading>
+      <div class="form-group">
+          <label>Password</label>
+          <input type="password" [(ngModel)]='password' class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <button type="submit" (click)='login()' class="btn btn-primary">Submit</button> Not registered? Click here ->
+        <a [routerLink]="['/register']">Register Here!</a>
+        
+  </div>
+  </div>
+  <ngx-loading [show]='loading' [config]="{ backgroundBorderRadius: '14px' }"></ngx-loading>
 </div>
+
 <!-- <div class='well' *ngIf='loggedIn'>
   <div>You may logout by clicking here ->
     <button type="button" class="btn btn-success" (click)='logout()' >Log Out</button>
   </div>
 </div> -->
 
-<div class="card" style="width: 18rem;" *ngIf='loggedIn'>
+<!-- <div class="card" style="width: 18rem;" *ngIf='loggedIn'>
   <div class="card-body">
     <h5 class="card-title">You are now logged in</h5>
     <h6 class="card-subtitle mb-2 text-muted"></h6>
@@ -31,6 +39,16 @@
   <ul class="list-group list-group-flush">
     <li class="list-group-item"><button type="button" class="btn btn-success" (click)='logout()' >Log Out</button></li>
   </ul>
+</div> -->
+<div class="card" *ngIf='loggedIn'>
+  <div class="card-header">
+    Status: Logged In
+  </div>
+  <div class="card-body">
+    <!-- <h5 class="card-title">You are now logged in</h5> -->
+    <p class="card-text">You are logged into the family website. You may click below to logout!</p>
+    <button type="button" class="btn btn-primary" (click)='logout()' >Log Out</button>
+  </div>
 </div>
 
 <div class='alert alert-danger' *ngIf='loginerror'>

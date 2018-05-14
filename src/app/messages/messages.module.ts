@@ -9,6 +9,8 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 
 import { SendmessageComponent } from './sendmessage.component';
+import { IdleTimeoutService } from '../service/timeout/idle-timeout.service';
+
 
 @NgModule({
   imports: [
@@ -29,7 +31,8 @@ import { SendmessageComponent } from './sendmessage.component';
     FormsModule
   ],
   providers: [
-    MessagesGuard
+    MessagesGuard,
+    IdleTimeoutService
   ]
-})
+}) 
 export class MessagesModule { }

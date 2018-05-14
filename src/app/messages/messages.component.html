@@ -24,7 +24,7 @@
   <div class="card-body">
     <h5 class="card-title">What would you like to do? </h5>
     <h6 class="card-subtitle mb-2 text-muted"></h6>
-    <p class="card-text">Click on the dropdown below to choose what you would like to do next!</p>
+    <p class="card-text">Click below to choose what you would like to do next!</p>
   </div>
 </div>
 <div class="card" style="width: 18rem;">
@@ -34,11 +34,11 @@
     </button>
     <ul *dropdownMenu class="dropdown-menu" role="menu">
       <li role="menuitem"><a class="dropdown-item" [routerLink]="['/sendmessage']">Send a Message!</a></li>
-      <li role="menuitem"><a class="dropdown-item" href="#">Place Message on the Message Board!</a></li>
-      <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+      <li role="menuitem"><a class="dropdown-item" [routerLink]="['/sendmessageboard']">Place Message on the Message Board!</a></li>
+      
       <li class="divider dropdown-divider"></li>
-      <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
-      </li>
+      <li role="menuitem"><a class="dropdown-item" href="#">View My Messages</a></li>
+      <li role="menuitem"><a class="dropdown-item" href="#">View Message Board</a></li>
     </ul>
   </div>
 </div>

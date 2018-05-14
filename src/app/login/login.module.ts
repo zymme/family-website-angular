@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login.component';
 import { AuthenticationService } from '../service/authentication.service';
 import { LoadingModule } from 'ngx-loading';
+import { IdleTimeoutService } from '../service/timeout/idle-timeout.service';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { LoadingModule } from 'ngx-loading';
     FormsModule
   ],
   providers: [
-    AuthenticationService
+    AuthenticationService,
+    IdleTimeoutService
   ]
 })
 export class LoginModule { }

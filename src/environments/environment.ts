@@ -8,5 +8,6 @@ export const environment = {
   // usersApiUrl: 'http://0.0.0.0:8882/api/Users'
   
   usersApiUrl: 'http://192.241.227.72:8882/api/Users',
-  authApiUrl: 'http://192.241.227.72:8882/api/Authentication'
+  authApiUrl: 'http://192.241.227.72:8882/api/Authentication',
+  messageboardApiUrl: 'http://0.0.0.0:8883/messageboard'
 };
